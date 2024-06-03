@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center;margin-top:27rem; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  body{
+    background-color: hsl(275, 100%, 97%);
+    margin: 0px;
+     }
+    .img {
+      background-image: url('./assets/images/background-pattern-desktop.svg');
+      width: 100%;
+      height: 20rem;
+     }
+     .main_container{
+      width: 37rem;
+      padding: 1rem;
+      position: relative;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 1rem;
+      padding: 2rem;
+      font-family: "Work Sans", sans-serif;
+      font-weight: 400, 600, 700;
+     }
+    .sub_container{
+      display: flex;
+      gap: 2rem;
+      font-family: "Work Sans", sans-serif;
+      font-size: large;
+    }
+    .content1{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    p{
+      content-visibility: hidden;
+      font-size: 16px;
+      color: hsl(292, 16%, 49%);
+    }
+     .hide{
+      content-visibility: hidden;
+      
+    } 
+    .show{
+      content-visibility: visible;
+    }
+    button{
+      all: unset;
+    position: relative;
+    }
+    @media (max-width:375px){
+     .img{
+      height: 14.5rem;
+      background-image: url("./assets/images/background-pattern-mobile.svg");
+     }
+     .attribution { margin-top:40rem; }
+      .main_container{
+        top:15rem;
+        width: 15rem;
+        margin-top: 15rem;
+        border-radius: .5rem;
+      }
+    }
+    
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="img"></div>
+<div class="main_container">
+  <div class="sub_container">
+    <img src="./assets/images/icon-star.svg" alt="icon-star">
+    
+    <h1>FAQs</h1>
+  </div>
+  <div class="content1">
+    <h3>What is Frontend Mentor, and how will it help me?</h3>
+    
+    <button class="btn" ><img class="plus" class="img_1" src="./assets/images/icon-plus.svg" alt="icon-plus">
+    <img class="hide minus"  src="./assets/images/icon-minus.svg" alt="icon-minus"></button>
+    
+ 
+    
+  </div>
+  <div>
+    <p>
+      Frontend Mentor offers realistic coding challenges to help developers improve their 
+  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+  all levels and ideal for portfolio building.
+    </p>
+  </div>
+  <hr>
+<div class="content1">
+  <h3>
+Is Frontend Mentor free?
+  </h3>
+  <button class="btn"><img class="plus" src="./assets/images/icon-plus.svg" alt="icon-plus">
+    <img class="hide minus" src="./assets/images/icon-minus.svg" alt="icon-minus"></button>
+  
+</div>
+<div>
+  <p>
+  Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+  option providing access to a range of projects suitable for all skill levels.
+  </p>
+</div>
+<hr>
+<div class="content1">
+  <h3>
+    Can I use Frontend Mentor projects in my portfolio?
+  </h3>
+  <button class="btn"><img class="plus" src="./assets/images/icon-plus.svg" alt="icon-plus">
+    <img class="hide minus" src="./assets/images/icon-minus.svg" alt="icon-minus"></button>
+  
+</div>
+<div>
+  <p>
+    Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+  way to showcase your skills to potential employers!
+  </p>
+</div>
+<hr>
+<div class="content1">
+  <h3>
+How can I get help if I'm stuck on a Frontend Mentor challenge?
+  </h3>
+  <button class="btn "><img class="plus" src="./assets/images/icon-plus.svg" alt="icon-plus">
+    <img class="hide minus" src="./assets/images/icon-minus.svg" alt="icon-minus"></button>
+  </div>
+  
+<div>
+  <p>
+    The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+  channel where you can ask questions and seek support from other community members.
+  </p>
+</div>
+   
+</div>
+
+<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Sudharsan s</a>.
+  </div>
+  <script>
+     document.querySelectorAll(".btn").forEach(btn => {
+      btn.addEventListener("click" , function(){
+      var classplus = this.querySelector(".plus");
+      var classminus = this.querySelector(".minus");
+      const paragraph = this.closest(".content1").nextElementSibling.querySelector("p");
+      
+      classplus.classList.toggle("hide")
+      classminus.classList.toggle("show")
+      paragraph.classList.toggle("show")
+      })
+     
+
+    })
+  
+  </script>
+</body>
+</html>
